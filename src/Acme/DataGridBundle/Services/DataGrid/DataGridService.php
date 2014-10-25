@@ -5,6 +5,11 @@ namespace Acme\DataGridBundle\Services\DataGrid;
 
 use Acme\DataGridBundle\Services\Request\BaseDataGridRequest;
 
+/**
+ * This class is used as data service class interact with DataGrid Twig Extension
+ * Class DataGridService
+ * @package Acme\DataGridBundle\Services\DataGrid
+ */
 class DataGridService
 {
 

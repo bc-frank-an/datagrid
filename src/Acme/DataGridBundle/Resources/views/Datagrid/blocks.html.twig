@@ -12,9 +12,17 @@
             </div>
 
             <table class="table">
+                <tr>{{ datagrid_header(dg) }}</tr>
                 {{ datagrid_rows(dg) }}
             </table>
         </div>
+
+        <div>
+            {{ datagrid_pagination(dg) }}
+
+        </div>
+
+
     </div>
 {% endblock grid %}
 
@@ -34,3 +42,60 @@
     {% endfor %}
 
 {% endblock grid_rows %}
+
+{#------Header---------#}
+
+{% block grid_header %}
+    <thead>
+    {% for h in headerData %}
+
+        <th class="order-header" fieldName="{{ h.fieldName }}" onclick="return dataGrid.orderBy('{{ h.fieldName }}')">
+           <a>{{ h.fieldName }}</a>
+        </th>
+
+
+    {% endfor %}
+    </thead>
+
+{% endblock grid_header %}
+
+{#------Pagination and limit--------#}
+
+{% block grid_pagination %}
+    <script>
+        $(function () {
+            dataGrid.currentPage ={{ currentPage }};
+            dataGrid.limit ={{ currentLimit }};
+            dataGrid.order = "{{ currentOrder }}";
+            dataGrid.dir = "{{ currentDir }}";
+        });
+    </script>
+
+    <div>
+        <span>{{ total }} Results</span>
+        <span>&nbsp;</span>
+
+        <span>
+          Page
+          <input type="button" value="<" onclick=" return dataGrid.goToPrevPage() ">
+           <input type="text" value="{{ currentPage }}" onkeypress="return dataGrid.goToPage(event,parseInt(this.value))">
+          <input type="button" value=">" onclick=" return dataGrid.goToNextPage() ">
+          of <span>{{ totalPages }}</span>
+        </span>
+        <span>&nbsp;</span>
+
+        <span>
+          Display
+          <select onchange="return dataGrid.changeLimit(this.value)">
+
+              {% for limit,selected in limitList %}
+
+                  <option value="{{ limit }}" {{ selected? 'selected="selected"':'' }}" >{{ limit }}</option>
+              {% endfor %}
+
+          </select>
+        </span>
+
+    </div>
+
+{% endblock grid_pagination %}

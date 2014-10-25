@@ -1,3 +1,26 @@
-<div >
-    {{ datagrid(datagrid) }}
-</div>
+{% extends 'AcmeDataGridDemoBundle::base.html.twig' %}
+
+{% block title %}Data Grid Demo{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/datagrid.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+
+
+
+{% block body %}
+    <!-- Top navigation bar -->
+    {% include 'AcmeDataGridDemoBundle::top_nav.html.twig' %}
+
+    <div class="container">
+        {{ datagrid(datagrid) }}
+    </div>
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('js/data-grid.js') }}"></script>
+    {% endblock %}
+
+{% endblock %}

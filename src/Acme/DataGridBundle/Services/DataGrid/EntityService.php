@@ -7,7 +7,11 @@ use Acme\DataGridBundle\Services\Utils\EntityFieldUtil;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
 
-
+/**
+ * This class is used to load entity data for the data grid
+ * Class EntityService
+ * @package Acme\DataGridBundle\Services\DataGrid
+ */
 class EntityService {
 
     private $className;
@@ -50,6 +54,10 @@ class EntityService {
 
     }
 
+    /**
+     * Get Total Number of Rows
+     * @return mixed
+     */
     public function getTotalDataCount()
     {
         $qb = $this->em->createQueryBuilder();
@@ -61,6 +69,11 @@ class EntityService {
 
     }
 
+    /**
+     * load raw ORM table data into array
+     * @param BaseDataGridRequest $request
+     * @return array
+     */
     public function loadData(BaseDataGridRequest $request)
     {
         $order = $request->getData('order');

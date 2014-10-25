@@ -1,3 +1,7 @@
 acme_data_grid_demo_homepage:
     path:     /datagridDemo
     defaults: { _controller: AcmeDataGridDemoBundle:Default:index }
+
+acme_data_grid_demo_index:
+    path:     /
+    defaults: { _controller: AcmeDataGridDemoBundle:Default:index }

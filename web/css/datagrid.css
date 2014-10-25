@@ -1,0 +1,22 @@
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+
+.order-desc {
+    background-image: url(/image/grid_sort_desc.gif);
+    background-repeat: no-repeat;
+    background-position: left 50%;
+}
+
+.order-asc {
+    background-image: url(/image/grid_sort_asc.gif);
+    background-repeat: no-repeat;
+    background-position: left 50%;
+}
+
+
+th>a {
+    cursor: pointer;
+}
