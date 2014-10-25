@@ -1,0 +1,8 @@
+acme_data_grid_demo:
+    resource: "@AcmeDataGridDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_data_grid:
+    resource: "@AcmeDataGridBundle/Resources/config/routing.yml"
+    prefix:   /
+

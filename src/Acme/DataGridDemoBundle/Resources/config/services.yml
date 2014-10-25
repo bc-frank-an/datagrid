@@ -1,0 +1,7 @@
+parameters:
+#    acme_data_grid_demo.example.class: Acme\DataGridDemoBundle\Example
+
+services:
+#    acme_data_grid_demo.example:
+#        class: %acme_data_grid_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

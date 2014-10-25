@@ -1,0 +1,10 @@
+parameters:
+
+
+
+services:
+
+
+  datagrid.entity_service:
+    class: Acme\DataGridBundle\Services\DataGrid\EntityService
+    arguments: [@doctrine]
