@@ -1,10 +1,21 @@
 parameters:
 
-
+  dataGridTemplateName: AcmeDataGridBundle:Datagrid:blocks.html.twig
 
 services:
+
+  acme.twig.datagrid_extension:
+    class: Acme\DataGridBundle\Twig\Extension\DataGridExtension
+    calls:
+      - [setTemplateName, [%dataGridTemplateName%]]
+    tags:
+      - { name: twig.extension }
 
 
   datagrid.entity_service:
     class: Acme\DataGridBundle\Services\DataGrid\EntityService
     arguments: [@doctrine]
+
+  datagrid.datagrid_service:
+    class: Acme\DataGridBundle\Services\DataGrid\DataGridService
+    arguments: [@datagrid.entity_service]

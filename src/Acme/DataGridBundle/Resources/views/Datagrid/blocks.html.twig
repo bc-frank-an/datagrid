@@ -1,0 +1,36 @@
+{#-------Main Layout--------#}
+
+{% block grid %}
+
+
+    <div class="row">
+
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ title }}</h3>
+            </div>
+
+            <table class="table">
+                {{ datagrid_rows(dg) }}
+            </table>
+        </div>
+    </div>
+{% endblock grid %}
+
+{#-------Row--------#}
+
+{% block grid_rows %}
+
+    {% for row in rowData %}
+        <tbody>
+        <tr>
+            {% for col in row %}
+                <td>{{ col }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+
+    {% endfor %}
+
+{% endblock grid_rows %}

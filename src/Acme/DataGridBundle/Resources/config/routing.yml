@@ -1,3 +1,1 @@
-acme_data_grid_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: AcmeDataGridBundle:Default:index }
+# we do not need routing in this stand alone plugin bundle
