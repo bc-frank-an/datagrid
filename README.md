@@ -86,10 +86,3 @@ When performing functions that alter the entity data, a unique identifier (say a
 
 When performing add/edit actions, all field data needs to be encoded in order to prevent XSS attack.
 
-
-
-
-
-
-
-
